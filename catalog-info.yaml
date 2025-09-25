@@ -7,7 +7,7 @@ metadata:
   annotations:
     backstage.io/managed-by-location: url:https://github.com/kevinneville/backstage-data-demo/blob/main/catalog-info.yaml
     backstage.io/techdocs-ref: dir:.
-    github.com/project-slug: volvo-cars/customer-data-pipeline
+    github.com/project-slug: kevinneville/backstage-data-demo
   tags:
     - data
     - analytics
@@ -22,50 +22,6 @@ metadata:
       icon: dashboard
 spec:
   type: data-pipelines
-  lifecycle: production
-  owner: data-team
-  system: customer-analytics
-  providesApis:
-    - customer-data-api
-  consumesApis:
-    - raw-customer-api
-    - external-enrichment-api
-  dependsOn:
-    - resource:customer-database
-    - resource:data-warehouse
----
-apiVersion: backstage.io/v1alpha1
-kind: API
-metadata:
-  name: customer-data-api
-  title: Customer Data API
-  description: API for accessing processed customer data
-spec:
-  type: rest
-  lifecycle: production
-  owner: data-team
-  system: customer-analytics
-  definition: |
-    openapi: 3.0.0
-    info:
-      title: Customer Data API
-      version: 1.0.0
-    paths:
-      /customers:
-        get:
-          summary: Get customer data
-          responses:
-            '200':
-              description: Customer data
----
-apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
-  name: customer-database
-  title: Customer Database
-  description: Primary database storing customer information
-spec:
-  type: database
   lifecycle: production
   owner: data-team
   system: customer-analytics
