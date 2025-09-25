@@ -6,7 +6,6 @@ metadata:
   datahub: digital_core
   annotations:
     github.com/project-slug: "kevinneville/backstage-data-demo"
-    backstage.io/techdocs-entity: component:default/data-platforms-docs
 spec:
   type: data-workspace
   lifecycle: experimental
