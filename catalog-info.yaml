@@ -21,7 +21,7 @@ metadata:
       title: Monitoring Dashboard
       icon: dashboard
 spec:
-  type: data-pipelines
+  type: data-pipeline
   lifecycle: production
   owner: data-team
   system: customer-analytics
